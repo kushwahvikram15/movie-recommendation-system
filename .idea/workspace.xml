@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b1002fa1-f1c4-47be-b407-f794c7816ad0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies.py" beforeDir="false" afterPath="$PROJECT_DIR$/movies.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +24,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../movie recommendation/Movie-Recommendation-Project-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -89,7 +88,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="movies" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="prac" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="untitled" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -101,7 +100,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/movies.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/prac.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -177,17 +176,17 @@
       <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.Home" />
       <item itemvalue="Python.setup" />
+      <item itemvalue="Python.prac" />
       <item itemvalue="Python.tempCodeRunnerFile" />
       <item itemvalue="Python.user_profile" />
-      <item itemvalue="Python.movies" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Home" />
-        <item itemvalue="Python.movies" />
         <item itemvalue="Python.tempCodeRunnerFile" />
         <item itemvalue="Python.user_profile" />
         <item itemvalue="Python.setup" />
+        <item itemvalue="Python.prac" />
       </list>
     </recent_temporary>
   </component>
@@ -209,9 +208,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
