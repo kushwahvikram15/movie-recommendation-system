@@ -14,23 +14,23 @@ from info import userinfo
 from tkinter import messagebox
 from recSys import Rec
 import io
-class movie(Template):
-    def __init__(self,lst,master,userr_coll,userr_name):
-        self.userr_coll = userr_coll
-        self.userr_name = userr_name
+class Application():
+    def __init__(self,master,lst,no,userr_coll,userr_name):
+        self.no = no
+        self.userr_name = 'v'
+
         self.master = master
-        self.lst = []
-        Template.__init__(self, self.lst, self.master)
-
-
         self.master.title('movies')
         self.key = -1
+        self.lst = []
         try:
             self.client = pymongo.MongoClient("localhost",27017)
             self.db = self.client
+
         except Exception as e:
             messagebox.showinfo("Info", e)
-
+        self.dbb = self.client.entertainment
+        self.userr_coll = self.dbb[f'{self.userr_name}']
         self.d = self.db.sample_mflix.movies.aggregate([{'$project': {'title': 1}}])
 
         for dic in self.d:
@@ -58,19 +58,19 @@ class movie(Template):
 
     def update_list(self):
 
-        self.top = Frame(self, height=150, width=1536, bg='#5e615e')
+        self.top = Frame(self.master, height=150, width=1536, bg='#5e615e')
         self.top.pack(side=TOP)
-        self.fs = Frame(self, height=5, width=1536, bg='red')
+        self.fs = Frame(self.master, height=5, width=1536, bg='red')
         self.fs.pack()
         
-        self.bottom = Frame(self, height=200, width=1536, bg='#2b2929')
+        self.bottom = Frame(self.master, height=200, width=1536, bg='#2b2929')
         self.bottom.pack()
      
         myfont = Font(family='Ink Free', size=20, weight='bold')
         Label(self.bottom, text = 'Recommanded for you',font = myfont,bg = '#2b2929',fg = '#6dad86').place(x = 15, y = 135)
 
-        self.canvas = Canvas(self, height=260, width=1536, bg='#2b2929')
-        self.scroll_y = Scrollbar(self, orient="horizontal", command=self.canvas.xview, bg='#2b2929', troughcolor='#2b2929')
+        self.canvas = Canvas(self.master, height=260, width=1536, bg='#2b2929')
+        self.scroll_y = Scrollbar(self.master, orient="horizontal", command=self.canvas.xview, bg='#2b2929', troughcolor='#2b2929')
         self.frame = Frame(self.canvas, bg='#2b2929', width=1536)
         self.frame_label = Frame(self.canvas, bg='#2b2929', width=1536)
 
@@ -215,11 +215,11 @@ class movie(Template):
         self.canvas.pack()
         self.scroll_y.pack(fill='x')
         
-        self.f = Frame(self, height=100, width=1536, bg='#2b2929')
+        self.f = Frame(self.master, height=100, width=1536, bg='#2b2929')
         self.f.pack()
-        self.bottom_strip = Frame(self,height = 5,width = 1536,bg = 'red')
+        self.bottom_strip = Frame(self.master,height = 5,width = 1536,bg = 'red')
         self.bottom_strip.pack()
-        self.bott = Frame(self, height=150, width=1536, bg='#5e615e')
+        self.bott = Frame(self.master, height=150, width=1536, bg='#5e615e')
         self.bott.pack()
 
 
@@ -227,6 +227,7 @@ class movie(Template):
         self.top_img = PhotoImage(file=r'images/youtube.png')
         self.top_img_label = Label(self.top, image=self.top_img, bg='#5e615e')
         self.top_img_label.place(x=360, y=20)
+        self.my_font = Font(family='Ink Free', size=20, weight='bold')
         self.label = Label(self.top, text='Movies Explorer', bg='#5e615e', fg='#fa0202', font=self.my_font)
         self.label.place(x=520, y=30)
         self.entrt = Frame(self.bottom, height=100, bg='grey')
@@ -245,8 +246,8 @@ class movie(Template):
         button.bind('<Return>',self.search)
         button.place(x=700, y=85)
         # I used a tiling WM with no controls, added a shortcut to quit
-        self.bind('<Control-Q>', lambda event=None: self.destroy())
-        self.bind('<Control-q>', lambda event=None: self.destroy())
+        # self.bind('<Control-Q>', lambda event=None: self.destroy())
+        # self.bind('<Control-q>', lambda event=None: self.destroy())
 
     def get(self,key):
         self.key = key
@@ -452,7 +453,20 @@ class movie(Template):
         c = Application(self.master, self.lst,self.no,self.userr_coll,self.userr_name)
         self.destroy()
 
-    def blogg(self):
-        from blogging import blog
-        c = blog(self.lst, self.master, self.userr_coll,self.userr_name)
-        self.destroy()
+def main():
+    root = Tk(className=' AutocompleteEntry demo')
+    lst = []
+    no = 1
+    userr_coll = 'unknown'
+    userr_name = 'unknown'
+    app = Application(root,lst,no,userr_coll,userr_name)
+    root.title("Phonebook App")
+    root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
+    print(root.winfo_screenwidth())
+    root.resizable(False, False)
+
+    root.mainloop()
+
+
+if __name__ == '__main__':
+    main()
