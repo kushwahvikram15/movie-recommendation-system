@@ -7,7 +7,7 @@ A `Graphical User Interface Project`,Content Based Recommender System recommends
   3. **EDA**: Extensive data visualisation and summary statistics were used to extract insights and pattern from the various datasets. The history, facts and trivia behind movies were              narrated through data.
   4. **Recommendation Systems**: This recommendation system built without the machine learning model,In this project built using only Python.
 
-![Optional Text](../master/myFolder/login.png)
+![Optional Text](/myFolder/login.png)
 
 # Repository Structure
   1. movies_recommender.ipynb: The Jupyter notebook containing code for the recommendation engines
