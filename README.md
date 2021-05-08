@@ -16,11 +16,11 @@ A `Graphical User Interface Project`,Content Based Recommender System recommends
   3.Pycharm
   4.MongoDb DataBase
 # Python libraries
-  1.Numpy
-  2.Pandas
-  3.Matplotlib and Seaborn
-  4.Scikit Learn
-  5.Xgboost
+  1. Numpy
+  2. Pandas
+  3. Matplotlib and Seaborn
+  4. Scikit Learn
+  5. Xgboost
 
     
     
